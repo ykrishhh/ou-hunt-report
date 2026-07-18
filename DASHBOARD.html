@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OU Hunt Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a1a; color: #fff; }
+        .card { background: #2a2a2a; border-radius: 8px; padding: 20px; margin: 10px; }
+        .high { border-left: 4px solid #ff4444; }
+        .medium { border-left: 4px solid #ffaa00; }
+        .low { border-left: 4px solid #44ff44; }
+        .info { border-left: 4px solid #4444ff; }
+        h1 { color: #44aaff; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    </style>
+</head>
+<body>
+    <h1>OU.edu Hunt Dashboard</h1>
+    <div class="grid">
+        <div class="card high">
+            <h3>XST (TRACE Method)</h3>
+            <p>Target: www.ou.edu</p>
+            <p>Impact: Session hijacking</p>
+            <p>Fix: TraceEnable off</p>
+        </div>
+        <div class="card high">
+            <h3>Email Spoofing</h3>
+            <p>Target: ou.edu</p>
+            <p>Impact: Phishing attacks</p>
+            <p>Fix: SPF -all, DMARC reject</p>
+        </div>
+        <div class="card medium">
+            <h3>Exchange Hostname Disclosure</h3>
+            <p>Target: exchange.ou.edu</p>
+            <p>Impact: Infrastructure mapping</p>
+            <p>Fix: Remove X-FEServer header</p>
+        </div>
+        <div class="card medium">
+            <h3>BeyondTrust SAML Leak</h3>
+            <p>Target: remote.ou.edu</p>
+            <p>Impact: Social engineering</p>
+            <p>Fix: Patch BeyondTrust</p>
+        </div>
+        <div class="card low">
+            <h3>Drupal Cache-Tags Leak</h3>
+            <p>Target: libraries.ou.edu</p>
+            <p>Impact: Internal enumeration</p>
+            <p>Fix: Disable cache-tags</p>
+        </div>
+        <div class="card info">
+            <h3>Git Repository Existence</h3>
+            <p>Target: libraries.ou.edu</p>
+            <p>Impact: Source code access</p>
+            <p>Status: Blocked (403)</p>
+        </div>
+    </div>
+</body>
+</html>
