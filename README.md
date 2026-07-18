@@ -63,8 +63,6 @@ graph TD
     style A2 fill:#ff4444
     style B1 fill:#ffaa00
     style B2 fill:#ffaa00
-    style C1 fill:#44ff44
-    style D1 fill:#4444ff
 ```
 
 ## Dashboard
