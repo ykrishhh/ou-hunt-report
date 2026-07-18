@@ -144,6 +144,8 @@ ou-hunt-report/
 
 Open [`dashboard/DASHBOARD.html`](dashboard/DASHBOARD.html) for an interactive visual overview of all findings.
 
+**Live:** https://ykrishhh.github.io/ou-hunt-report/ (deployed via GitHub Pages)
+
 ## Knowledge Graph (Understand-Anything)
 
 A structural knowledge graph of this repo, generated with Understand-Anything's schema (`understand/knowledge-graph.json`). Full graph in [`understand/GRAPH.md`](understand/GRAPH.md).
