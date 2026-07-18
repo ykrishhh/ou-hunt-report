@@ -66,7 +66,7 @@ FINDINGS = {
     "Git Repository Existence":  ("finding", "Findings", "INFO",   "libraries.ou.edu"),
 }
 
-TARGETS = ["www.ou.edu", "exchange.ou.edu", "remote.ou.edu", "libraries.ou.edu", "sso.ou.edu", "coe.ou.edu"]
+TARGETS = ["www.ou.edu", "ou.edu", "exchange.ou.edu", "remote.ou.edu", "libraries.ou.edu", "sso.ou.edu", "coe.ou.edu"]
 
 nodes = []
 edges = []
@@ -153,7 +153,12 @@ with open(os.path.join(UA_DIR, "knowledge-graph.json"), "w") as f:
     json.dump(graph, f, indent=2)
 
 # Emit Mermaid (graph TD, node aliases to keep labels short)
-def clean(s): return s.replace(":", "_").replace(".", "_").replace(" ", "_")
+import re as _re
+def clean(s):
+    # Mermaid node IDs must be alphanumeric/underscore only — strip () and unsafe chars
+    s = s.replace(":", "_").replace(".", "_").replace(" ", "_")
+    s = _re.sub(r"[^A-Za-z0-9_]", "", s)   # remove ( ) - and any other symbol
+    return _re.sub(r"_+", "_", s)            # collapse repeated underscores
 lines = ["graph TD"]
 # node style map
 style = {}

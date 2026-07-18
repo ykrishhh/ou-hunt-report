@@ -12,7 +12,7 @@
       "mermaid"
     ],
     "description": "University of Oklahoma red team assessment knowledge graph",
-    "analyzedAt": "2026-07-18T12:03:00.066317+00:00",
+    "analyzedAt": "2026-07-18T12:06:11.016848+00:00",
     "gitCommitHash": "6af5f1f34c6b"
   },
   "nodes": [
@@ -21,6 +21,12 @@
       "type": "concept",
       "name": "www.ou.edu",
       "summary": "Target host www.ou.edu (University of Oklahoma)"
+    },
+    {
+      "id": "concept:target:ou.edu",
+      "type": "concept",
+      "name": "ou.edu",
+      "summary": "Target host ou.edu (University of Oklahoma)"
     },
     {
       "id": "concept:target:exchange.ou.edu",
@@ -701,6 +707,7 @@
       "description": "Target infrastructure",
       "nodeIds": [
         "concept:target:www.ou.edu",
+        "concept:target:ou.edu",
         "concept:target:exchange.ou.edu",
         "concept:target:remote.ou.edu",
         "concept:target:libraries.ou.edu",
