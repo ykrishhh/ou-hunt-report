@@ -10,6 +10,22 @@ A comprehensive security assessment of the University of Oklahoma's infrastructu
 ![Target](https://img.shields.io/badge/target-ou.edu-blue)
 ![Status](https://img.shields.io/badge/status-validated-brightgreen)
 
+## Table of Contents
+
+- [Visual Assets](#visual-assets)
+- [Repository Structure](#repository-structure)
+- [Findings](#findings)
+- [Attack Chain](#attack-chain)
+- [Infrastructure Map](#infrastructure-map)
+- [Findings Severity](#findings-severity)
+- [Dashboard](#dashboard)
+- [Knowledge Graph (Understand-Anything)](#knowledge-graph-understand-anything)
+- [Diagrams](#diagrams)
+- [POCs](#pocs)
+- [Reports](#reports)
+- [Tools Used](#tools-used)
+- [License](#license)
+
 ## Visual Assets
 
 Static SVGs (render on GitHub web **and** the mobile app — unlike Mermaid):
@@ -323,4 +339,6 @@ Open [`diagrams/DIAGRAMS.html`](diagrams/DIAGRAMS.html) to view interactive Merm
 
 ## License
 
-MIT
+Licensed under the [MIT License](LICENSE). See [SECURITY.md](SECURITY.md) for the
+responsible-disclosure policy and [CONTRIBUTING.md](CONTRIBUTING.md) for how to
+extend this repository.
