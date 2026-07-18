@@ -2,6 +2,26 @@
 
 A comprehensive security assessment of the University of Oklahoma's infrastructure, identifying 6 validated vulnerabilities with working proof-of-concept exploits.
 
+![Findings](https://img.shields.io/badge/findings-6-red)
+![High](https://img.shields.io/badge/HIGH-2-orange)
+![Medium](https://img.shields.io/badge/MEDIUM-2-yellow)
+![Low](https://img.shields.io/badge/LOW-1-green)
+![Info](https://img.shields.io/badge/INFO-1-blue)
+![Target](https://img.shields.io/badge/target-ou.edu-blue)
+![Status](https://img.shields.io/badge/status-validated-brightgreen)
+
+## Visual Assets
+
+Static SVGs (render on GitHub web **and** the mobile app — unlike Mermaid):
+
+| Asset | Preview |
+|-------|---------|
+| Severity breakdown | ![severity](assets/severity.svg) |
+| Attack chain | ![attack-chain](assets/attack-chain.svg) |
+| Knowledge graph | ![knowledge-graph](assets/knowledge-graph.svg) |
+
+> PNG fallbacks also provided: `assets/severity.png`, `assets/attack-chain.png`, `assets/knowledge-graph.png`
+
 ## Findings
 
 | # | Finding | Severity | Target |
