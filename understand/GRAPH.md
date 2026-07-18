@@ -16,102 +16,139 @@ graph TD
     concept_finding_BeyondTrust_SAML_Leak["BeyondTrust SAML Leak"]
     concept_finding_Drupal_Cache-Tags_Leak["Drupal Cache-Tags Leak"]
     concept_finding_Git_Repository_Existence["Git Repository Existence"]
-    document_FINAL_COMBINED_md["FINAL_COMBINED.md"]
-    document_EXECUTIVE_SUMMARY_md["EXECUTIVE_SUMMARY.md"]
     document_ATTACK_MATRIX_md["ATTACK_MATRIX.md"]
-    document_REMEDIATION_CHECKLIST_md["REMEDIATION_CHECKLIST.md"]
+    document_COMBINED_REPORT_md["COMBINED_REPORT.md"]
+    document_EXECUTIVE_SUMMARY_md["EXECUTIVE_SUMMARY.md"]
+    document_EXPLOIT_REPORT_md["EXPLOIT_REPORT.md"]
+    document_FINAL_COMBINED_md["FINAL_COMBINED.md"]
+    document_FINAL_REPORT_md["FINAL_REPORT.md"]
     document_KNOWLEDGE_GRAPH_md["KNOWLEDGE_GRAPH.md"]
+    document_REMEDIATION_CHECKLIST_md["REMEDIATION_CHECKLIST.md"]
+    document_REPORT_md["REPORT.md"]
+    document_TEST_DIAGRAM_md["TEST_DIAGRAM.md"]
     document_ATTACK_CHAIN_mmd["ATTACK_CHAIN.mmd"]
-    document_INFRASTRUCTURE_mmd["INFRASTRUCTURE.mmd"]
-    document_FINDINGS_SEVERITY_mmd["FINDINGS_SEVERITY.mmd"]
-    document_DIAGRAMS_html["DIAGRAMS.html"]
     document_DASHBOARD_html["DASHBOARD.html"]
+    document_DIAGRAMS_html["DIAGRAMS.html"]
+    document_FINDINGS_SEVERITY_mmd["FINDINGS_SEVERITY.mmd"]
+    document_INFRASTRUCTURE_mmd["INFRASTRUCTURE.mmd"]
+    document_email_spoof_poc_py["email_spoof_poc.py"]
     document_xst_poc_html["xst_poc.html"]
     document_xst_poc_sh["xst_poc.sh"]
-    document_email_spoof_poc_py["email_spoof_poc.py"]
-    document_beyondtrust_poc_md["beyondtrust_poc.md"]
     concept_target_www_ou_edu -->|exposes| concept_finding_XST_(TRACE_Method)
     concept_target_ou_edu -->|exposes| concept_finding_Email_Spoofing
     concept_target_exchange_ou_edu -->|exposes| concept_finding_Exchange_Hostname_Disclosure
     concept_target_remote_ou_edu -->|exposes| concept_finding_BeyondTrust_SAML_Leak
     concept_target_libraries_ou_edu -->|exposes| concept_finding_Drupal_Cache-Tags_Leak
     concept_target_libraries_ou_edu -->|exposes| concept_finding_Git_Repository_Existence
-    document_FINAL_COMBINED_md -->|documents| concept_finding_XST_(TRACE_Method)
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Email_Spoofing
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
-    document_FINAL_COMBINED_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Git_Repository_Existence
-    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_XST_(TRACE_Method)
-    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Email_Spoofing
-    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
-    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
-    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
-    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Git_Repository_Existence
     document_ATTACK_MATRIX_md -->|documents| concept_finding_XST_(TRACE_Method)
     document_ATTACK_MATRIX_md -->|documents| concept_finding_Email_Spoofing
     document_ATTACK_MATRIX_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
     document_ATTACK_MATRIX_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
     document_ATTACK_MATRIX_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
     document_ATTACK_MATRIX_md -->|documents| concept_finding_Git_Repository_Existence
-    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_XST_(TRACE_Method)
-    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Email_Spoofing
-    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
-    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
-    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
-    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Git_Repository_Existence
+    document_COMBINED_REPORT_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_COMBINED_REPORT_md -->|documents| concept_finding_Email_Spoofing
+    document_COMBINED_REPORT_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_COMBINED_REPORT_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_COMBINED_REPORT_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_COMBINED_REPORT_md -->|documents| concept_finding_Git_Repository_Existence
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Email_Spoofing
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Git_Repository_Existence
+    document_EXPLOIT_REPORT_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_EXPLOIT_REPORT_md -->|documents| concept_finding_Email_Spoofing
+    document_EXPLOIT_REPORT_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_EXPLOIT_REPORT_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_EXPLOIT_REPORT_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_EXPLOIT_REPORT_md -->|documents| concept_finding_Git_Repository_Existence
+    document_FINAL_COMBINED_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Email_Spoofing
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_FINAL_COMBINED_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Git_Repository_Existence
+    document_FINAL_REPORT_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_FINAL_REPORT_md -->|documents| concept_finding_Email_Spoofing
+    document_FINAL_REPORT_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_FINAL_REPORT_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_FINAL_REPORT_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_FINAL_REPORT_md -->|documents| concept_finding_Git_Repository_Existence
     document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_XST_(TRACE_Method)
     document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_Email_Spoofing
     document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
     document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
     document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
     document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_Git_Repository_Existence
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Email_Spoofing
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Git_Repository_Existence
+    document_REPORT_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_REPORT_md -->|documents| concept_finding_Email_Spoofing
+    document_REPORT_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_REPORT_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_REPORT_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_REPORT_md -->|documents| concept_finding_Git_Repository_Existence
+    document_TEST_DIAGRAM_md -->|documents| concept_finding_XST_(TRACE_Method)
+    document_TEST_DIAGRAM_md -->|documents| concept_finding_Email_Spoofing
+    document_TEST_DIAGRAM_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_TEST_DIAGRAM_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_TEST_DIAGRAM_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_TEST_DIAGRAM_md -->|documents| concept_finding_Git_Repository_Existence
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_XST_(TRACE_Method)
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Email_Spoofing
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Git_Repository_Existence
-    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_XST_(TRACE_Method)
-    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Email_Spoofing
-    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
-    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
-    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
-    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Git_Repository_Existence
-    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_XST_(TRACE_Method)
-    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Email_Spoofing
-    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
-    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
-    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
-    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Git_Repository_Existence
-    document_DIAGRAMS_html -->|visualizes| concept_finding_XST_(TRACE_Method)
-    document_DIAGRAMS_html -->|visualizes| concept_finding_Email_Spoofing
-    document_DIAGRAMS_html -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
-    document_DIAGRAMS_html -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
-    document_DIAGRAMS_html -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
-    document_DIAGRAMS_html -->|visualizes| concept_finding_Git_Repository_Existence
     document_DASHBOARD_html -->|visualizes| concept_finding_XST_(TRACE_Method)
     document_DASHBOARD_html -->|visualizes| concept_finding_Email_Spoofing
     document_DASHBOARD_html -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
     document_DASHBOARD_html -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
     document_DASHBOARD_html -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
     document_DASHBOARD_html -->|visualizes| concept_finding_Git_Repository_Existence
+    document_DIAGRAMS_html -->|visualizes| concept_finding_XST_(TRACE_Method)
+    document_DIAGRAMS_html -->|visualizes| concept_finding_Email_Spoofing
+    document_DIAGRAMS_html -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
+    document_DIAGRAMS_html -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
+    document_DIAGRAMS_html -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
+    document_DIAGRAMS_html -->|visualizes| concept_finding_Git_Repository_Existence
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_XST_(TRACE_Method)
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Email_Spoofing
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Git_Repository_Existence
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_XST_(TRACE_Method)
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Email_Spoofing
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Drupal_Cache-Tags_Leak
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Git_Repository_Existence
+    document_email_spoof_poc_py -->|exploits| concept_finding_Email_Spoofing
     document_xst_poc_html -->|exploits| concept_finding_XST_(TRACE_Method)
     document_xst_poc_sh -->|exploits| concept_finding_XST_(TRACE_Method)
-    document_email_spoof_poc_py -->|exploits| concept_finding_Email_Spoofing
-    document_beyondtrust_poc_md -->|exploits| concept_finding_BeyondTrust_SAML_Leak
-    style document_FINAL_COMBINED_md fill:#888888,color:#fff
-    style document_EXECUTIVE_SUMMARY_md fill:#888888,color:#fff
     style document_ATTACK_MATRIX_md fill:#888888,color:#fff
-    style document_REMEDIATION_CHECKLIST_md fill:#888888,color:#fff
+    style document_COMBINED_REPORT_md fill:#888888,color:#fff
+    style document_EXECUTIVE_SUMMARY_md fill:#888888,color:#fff
+    style document_EXPLOIT_REPORT_md fill:#888888,color:#fff
+    style document_FINAL_COMBINED_md fill:#888888,color:#fff
+    style document_FINAL_REPORT_md fill:#888888,color:#fff
     style document_KNOWLEDGE_GRAPH_md fill:#888888,color:#fff
+    style document_REMEDIATION_CHECKLIST_md fill:#888888,color:#fff
+    style document_REPORT_md fill:#888888,color:#fff
+    style document_TEST_DIAGRAM_md fill:#888888,color:#fff
     style document_ATTACK_CHAIN_mmd fill:#888888,color:#fff
-    style document_INFRASTRUCTURE_mmd fill:#888888,color:#fff
-    style document_FINDINGS_SEVERITY_mmd fill:#888888,color:#fff
-    style document_DIAGRAMS_html fill:#888888,color:#fff
     style document_DASHBOARD_html fill:#888888,color:#fff
+    style document_DIAGRAMS_html fill:#888888,color:#fff
+    style document_FINDINGS_SEVERITY_mmd fill:#888888,color:#fff
+    style document_INFRASTRUCTURE_mmd fill:#888888,color:#fff
+    style document_email_spoof_poc_py fill:#888888,color:#fff
     style document_xst_poc_html fill:#888888,color:#fff
     style document_xst_poc_sh fill:#888888,color:#fff
-    style document_email_spoof_poc_py fill:#888888,color:#fff
-    style document_beyondtrust_poc_md fill:#888888,color:#fff
 ```

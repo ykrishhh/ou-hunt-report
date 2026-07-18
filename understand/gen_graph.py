@@ -13,27 +13,49 @@ from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA_DIR = os.path.join(ROOT, "understand")
 
-# Map each report/POC file to a hunt "concept" node and layer.
-REPORTS = {
-    "FINAL_COMBINED.md":        ("report", "Reporting", "Consolidated findings across all targets"),
-    "EXECUTIVE_SUMMARY.md":     ("report", "Reporting", "High-level leadership summary"),
-    "ATTACK_MATRIX.md":         ("report", "Reporting", "Techniques and kill chain"),
-    "REMEDIATION_CHECKLIST.md": ("report", "Reporting", "Actionable fix list"),
-    "KNOWLEDGE_GRAPH.md":       ("report", "Reporting", "Interactive knowledge graph"),
+# Auto-discover report / diagram / poc files from the repo so edits are picked up
+# without editing this script. Manual descriptions override the auto summary.
+REPORT_DESC = {
+    "FINAL_COMBINED.md": "Consolidated findings across all targets",
+    "EXECUTIVE_SUMMARY.md": "High-level leadership summary",
+    "ATTACK_MATRIX.md": "Techniques and kill chain",
+    "REMEDIATION_CHECKLIST.md": "Actionable fix list",
+    "KNOWLEDGE_GRAPH.md": "Interactive knowledge graph",
+    "REPORT.md": "Hunt report",
+    "COMBINED_REPORT.md": "Combined findings report",
+    "EXPLOIT_REPORT.md": "Exploitation report",
+    "FINAL_REPORT.md": "Final report",
+    "TEST_DIAGRAM.md": "Test diagram",
 }
-DIAGRAMS = {
-    "ATTACK_CHAIN.mmd":       ("diagram", "Diagrams", "Attack chain flow"),
-    "INFRASTRUCTURE.mmd":     ("diagram", "Diagrams", "Infrastructure map"),
-    "FINDINGS_SEVERITY.mmd":  ("diagram", "Diagrams", "Severity breakdown"),
-    "DIAGRAMS.html":          ("diagram", "Diagrams", "Interactive Mermaid viewer"),
-    "DASHBOARD.html":         ("diagram", "Diagrams", "Visual hunt dashboard"),
+DIAGRAM_DESC = {
+    "ATTACK_CHAIN.mmd": "Attack chain flow",
+    "INFRASTRUCTURE.mmd": "Infrastructure map",
+    "FINDINGS_SEVERITY.mmd": "Severity breakdown",
+    "DIAGRAMS.html": "Interactive Mermaid viewer",
+    "DASHBOARD.html": "Visual hunt dashboard",
 }
-POCS = {
-    "xst_poc.html":       ("poc", "PoC", "Browser XST exploit for www.ou.edu"),
-    "xst_poc.sh":         ("poc", "PoC", "Bash XST exploit script"),
-    "email_spoof_poc.py": ("poc", "PoC", "Email spoofing demonstration"),
-    "beyondtrust_poc.md": ("poc", "PoC", "BeyondTrust SAML findings"),
+POC_DESC = {
+    "xst_poc.html": "Browser XST exploit for www.ou.edu",
+    "xst_poc.sh": "Bash XST exploit script",
+    "email_spoof_poc.py": "Email spoofing demonstration",
+    "beyondtrust_poc.md": "BeyondTrust SAML findings",
 }
+
+def discover(exts, desc_map):
+    out = {}
+    for fn in sorted(os.listdir(ROOT)):
+        if fn in ("README.md",) or fn.startswith("."):
+            continue
+        if fn.endswith(exts):
+            out[fn] = desc_map.get(fn, fn.replace("_", " ").replace(".md", ""))
+    return out
+
+REPORTS = {f: ("report", "Reporting", d) for f, d in discover((".md",), REPORT_DESC).items()
+           if f not in DIAGRAM_DESC and f not in POC_DESC}
+DIAGRAMS = {f: ("diagram", "Diagrams", d) for f, d in discover((".mmd", ".html"), DIAGRAM_DESC).items()
+            if f in DIAGRAM_DESC}
+POCS = {f: ("poc", "PoC", d) for f, d in discover((".py", ".sh", ".html"), POC_DESC).items()
+        if f in POC_DESC}
 
 FINDINGS = {
     "XST (TRACE Method)":        ("finding", "Findings", "HIGH",   "www.ou.edu"),

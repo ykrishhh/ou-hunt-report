@@ -12,7 +12,7 @@
       "mermaid"
     ],
     "description": "University of Oklahoma red team assessment knowledge graph",
-    "analyzedAt": "2026-07-18T11:55:35.302080+00:00",
+    "analyzedAt": "2026-07-18T12:03:00.066317+00:00",
     "gitCommitHash": "6af5f1f34c6b"
   },
   "nodes": [
@@ -89,10 +89,16 @@
       "summary": "INFO finding on libraries.ou.edu"
     },
     {
-      "id": "document:FINAL_COMBINED.md",
+      "id": "document:ATTACK_MATRIX.md",
       "type": "document",
-      "name": "FINAL_COMBINED.md",
-      "summary": "Consolidated findings across all targets"
+      "name": "ATTACK_MATRIX.md",
+      "summary": "Techniques and kill chain"
+    },
+    {
+      "id": "document:COMBINED_REPORT.md",
+      "type": "document",
+      "name": "COMBINED_REPORT.md",
+      "summary": "Combined findings report"
     },
     {
       "id": "document:EXECUTIVE_SUMMARY.md",
@@ -101,16 +107,22 @@
       "summary": "High-level leadership summary"
     },
     {
-      "id": "document:ATTACK_MATRIX.md",
+      "id": "document:EXPLOIT_REPORT.md",
       "type": "document",
-      "name": "ATTACK_MATRIX.md",
-      "summary": "Techniques and kill chain"
+      "name": "EXPLOIT_REPORT.md",
+      "summary": "Exploitation report"
     },
     {
-      "id": "document:REMEDIATION_CHECKLIST.md",
+      "id": "document:FINAL_COMBINED.md",
       "type": "document",
-      "name": "REMEDIATION_CHECKLIST.md",
-      "summary": "Actionable fix list"
+      "name": "FINAL_COMBINED.md",
+      "summary": "Consolidated findings across all targets"
+    },
+    {
+      "id": "document:FINAL_REPORT.md",
+      "type": "document",
+      "name": "FINAL_REPORT.md",
+      "summary": "Final report"
     },
     {
       "id": "document:KNOWLEDGE_GRAPH.md",
@@ -119,22 +131,34 @@
       "summary": "Interactive knowledge graph"
     },
     {
+      "id": "document:REMEDIATION_CHECKLIST.md",
+      "type": "document",
+      "name": "REMEDIATION_CHECKLIST.md",
+      "summary": "Actionable fix list"
+    },
+    {
+      "id": "document:REPORT.md",
+      "type": "document",
+      "name": "REPORT.md",
+      "summary": "Hunt report"
+    },
+    {
+      "id": "document:TEST_DIAGRAM.md",
+      "type": "document",
+      "name": "TEST_DIAGRAM.md",
+      "summary": "Test diagram"
+    },
+    {
       "id": "document:ATTACK_CHAIN.mmd",
       "type": "document",
       "name": "ATTACK_CHAIN.mmd",
       "summary": "Attack chain flow"
     },
     {
-      "id": "document:INFRASTRUCTURE.mmd",
+      "id": "document:DASHBOARD.html",
       "type": "document",
-      "name": "INFRASTRUCTURE.mmd",
-      "summary": "Infrastructure map"
-    },
-    {
-      "id": "document:FINDINGS_SEVERITY.mmd",
-      "type": "document",
-      "name": "FINDINGS_SEVERITY.mmd",
-      "summary": "Severity breakdown"
+      "name": "DASHBOARD.html",
+      "summary": "Visual hunt dashboard"
     },
     {
       "id": "document:DIAGRAMS.html",
@@ -143,10 +167,22 @@
       "summary": "Interactive Mermaid viewer"
     },
     {
-      "id": "document:DASHBOARD.html",
+      "id": "document:FINDINGS_SEVERITY.mmd",
       "type": "document",
-      "name": "DASHBOARD.html",
-      "summary": "Visual hunt dashboard"
+      "name": "FINDINGS_SEVERITY.mmd",
+      "summary": "Severity breakdown"
+    },
+    {
+      "id": "document:INFRASTRUCTURE.mmd",
+      "type": "document",
+      "name": "INFRASTRUCTURE.mmd",
+      "summary": "Infrastructure map"
+    },
+    {
+      "id": "document:email_spoof_poc.py",
+      "type": "document",
+      "name": "email_spoof_poc.py",
+      "summary": "Email spoofing demonstration"
     },
     {
       "id": "document:xst_poc.html",
@@ -159,18 +195,6 @@
       "type": "document",
       "name": "xst_poc.sh",
       "summary": "Bash XST exploit script"
-    },
-    {
-      "id": "document:email_spoof_poc.py",
-      "type": "document",
-      "name": "email_spoof_poc.py",
-      "summary": "Email spoofing demonstration"
-    },
-    {
-      "id": "document:beyondtrust_poc.md",
-      "type": "document",
-      "name": "beyondtrust_poc.md",
-      "summary": "BeyondTrust SAML findings"
     }
   ],
   "edges": [
@@ -205,32 +229,62 @@
       "type": "exposes"
     },
     {
-      "source": "document:FINAL_COMBINED.md",
+      "source": "document:ATTACK_MATRIX.md",
       "target": "concept:finding:XST (TRACE Method)",
       "type": "documents"
     },
     {
-      "source": "document:FINAL_COMBINED.md",
+      "source": "document:ATTACK_MATRIX.md",
       "target": "concept:finding:Email Spoofing",
       "type": "documents"
     },
     {
-      "source": "document:FINAL_COMBINED.md",
+      "source": "document:ATTACK_MATRIX.md",
       "target": "concept:finding:Exchange Hostname Disclosure",
       "type": "documents"
     },
     {
-      "source": "document:FINAL_COMBINED.md",
+      "source": "document:ATTACK_MATRIX.md",
       "target": "concept:finding:BeyondTrust SAML Leak",
       "type": "documents"
     },
     {
-      "source": "document:FINAL_COMBINED.md",
+      "source": "document:ATTACK_MATRIX.md",
       "target": "concept:finding:Drupal Cache-Tags Leak",
       "type": "documents"
     },
     {
-      "source": "document:FINAL_COMBINED.md",
+      "source": "document:ATTACK_MATRIX.md",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "documents"
+    },
+    {
+      "source": "document:COMBINED_REPORT.md",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "documents"
+    },
+    {
+      "source": "document:COMBINED_REPORT.md",
+      "target": "concept:finding:Email Spoofing",
+      "type": "documents"
+    },
+    {
+      "source": "document:COMBINED_REPORT.md",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "documents"
+    },
+    {
+      "source": "document:COMBINED_REPORT.md",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:COMBINED_REPORT.md",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:COMBINED_REPORT.md",
       "target": "concept:finding:Git Repository Existence",
       "type": "documents"
     },
@@ -265,62 +319,92 @@
       "type": "documents"
     },
     {
-      "source": "document:ATTACK_MATRIX.md",
+      "source": "document:EXPLOIT_REPORT.md",
       "target": "concept:finding:XST (TRACE Method)",
       "type": "documents"
     },
     {
-      "source": "document:ATTACK_MATRIX.md",
+      "source": "document:EXPLOIT_REPORT.md",
       "target": "concept:finding:Email Spoofing",
       "type": "documents"
     },
     {
-      "source": "document:ATTACK_MATRIX.md",
+      "source": "document:EXPLOIT_REPORT.md",
       "target": "concept:finding:Exchange Hostname Disclosure",
       "type": "documents"
     },
     {
-      "source": "document:ATTACK_MATRIX.md",
+      "source": "document:EXPLOIT_REPORT.md",
       "target": "concept:finding:BeyondTrust SAML Leak",
       "type": "documents"
     },
     {
-      "source": "document:ATTACK_MATRIX.md",
+      "source": "document:EXPLOIT_REPORT.md",
       "target": "concept:finding:Drupal Cache-Tags Leak",
       "type": "documents"
     },
     {
-      "source": "document:ATTACK_MATRIX.md",
+      "source": "document:EXPLOIT_REPORT.md",
       "target": "concept:finding:Git Repository Existence",
       "type": "documents"
     },
     {
-      "source": "document:REMEDIATION_CHECKLIST.md",
+      "source": "document:FINAL_COMBINED.md",
       "target": "concept:finding:XST (TRACE Method)",
       "type": "documents"
     },
     {
-      "source": "document:REMEDIATION_CHECKLIST.md",
+      "source": "document:FINAL_COMBINED.md",
       "target": "concept:finding:Email Spoofing",
       "type": "documents"
     },
     {
-      "source": "document:REMEDIATION_CHECKLIST.md",
+      "source": "document:FINAL_COMBINED.md",
       "target": "concept:finding:Exchange Hostname Disclosure",
       "type": "documents"
     },
     {
-      "source": "document:REMEDIATION_CHECKLIST.md",
+      "source": "document:FINAL_COMBINED.md",
       "target": "concept:finding:BeyondTrust SAML Leak",
       "type": "documents"
     },
     {
-      "source": "document:REMEDIATION_CHECKLIST.md",
+      "source": "document:FINAL_COMBINED.md",
       "target": "concept:finding:Drupal Cache-Tags Leak",
       "type": "documents"
     },
     {
-      "source": "document:REMEDIATION_CHECKLIST.md",
+      "source": "document:FINAL_COMBINED.md",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "documents"
+    },
+    {
+      "source": "document:FINAL_REPORT.md",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "documents"
+    },
+    {
+      "source": "document:FINAL_REPORT.md",
+      "target": "concept:finding:Email Spoofing",
+      "type": "documents"
+    },
+    {
+      "source": "document:FINAL_REPORT.md",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "documents"
+    },
+    {
+      "source": "document:FINAL_REPORT.md",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:FINAL_REPORT.md",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:FINAL_REPORT.md",
       "target": "concept:finding:Git Repository Existence",
       "type": "documents"
     },
@@ -355,6 +439,96 @@
       "type": "documents"
     },
     {
+      "source": "document:REMEDIATION_CHECKLIST.md",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "documents"
+    },
+    {
+      "source": "document:REMEDIATION_CHECKLIST.md",
+      "target": "concept:finding:Email Spoofing",
+      "type": "documents"
+    },
+    {
+      "source": "document:REMEDIATION_CHECKLIST.md",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "documents"
+    },
+    {
+      "source": "document:REMEDIATION_CHECKLIST.md",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:REMEDIATION_CHECKLIST.md",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:REMEDIATION_CHECKLIST.md",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "documents"
+    },
+    {
+      "source": "document:REPORT.md",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "documents"
+    },
+    {
+      "source": "document:REPORT.md",
+      "target": "concept:finding:Email Spoofing",
+      "type": "documents"
+    },
+    {
+      "source": "document:REPORT.md",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "documents"
+    },
+    {
+      "source": "document:REPORT.md",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:REPORT.md",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:REPORT.md",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "documents"
+    },
+    {
+      "source": "document:TEST_DIAGRAM.md",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "documents"
+    },
+    {
+      "source": "document:TEST_DIAGRAM.md",
+      "target": "concept:finding:Email Spoofing",
+      "type": "documents"
+    },
+    {
+      "source": "document:TEST_DIAGRAM.md",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "documents"
+    },
+    {
+      "source": "document:TEST_DIAGRAM.md",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:TEST_DIAGRAM.md",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "documents"
+    },
+    {
+      "source": "document:TEST_DIAGRAM.md",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "documents"
+    },
+    {
       "source": "document:ATTACK_CHAIN.mmd",
       "target": "concept:finding:XST (TRACE Method)",
       "type": "visualizes"
@@ -381,6 +555,96 @@
     },
     {
       "source": "document:ATTACK_CHAIN.mmd",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DASHBOARD.html",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DASHBOARD.html",
+      "target": "concept:finding:Email Spoofing",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DASHBOARD.html",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DASHBOARD.html",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DASHBOARD.html",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DASHBOARD.html",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DIAGRAMS.html",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DIAGRAMS.html",
+      "target": "concept:finding:Email Spoofing",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DIAGRAMS.html",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DIAGRAMS.html",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DIAGRAMS.html",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:DIAGRAMS.html",
+      "target": "concept:finding:Git Repository Existence",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:FINDINGS_SEVERITY.mmd",
+      "target": "concept:finding:XST (TRACE Method)",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:FINDINGS_SEVERITY.mmd",
+      "target": "concept:finding:Email Spoofing",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:FINDINGS_SEVERITY.mmd",
+      "target": "concept:finding:Exchange Hostname Disclosure",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:FINDINGS_SEVERITY.mmd",
+      "target": "concept:finding:BeyondTrust SAML Leak",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:FINDINGS_SEVERITY.mmd",
+      "target": "concept:finding:Drupal Cache-Tags Leak",
+      "type": "visualizes"
+    },
+    {
+      "source": "document:FINDINGS_SEVERITY.mmd",
       "target": "concept:finding:Git Repository Existence",
       "type": "visualizes"
     },
@@ -415,94 +679,9 @@
       "type": "visualizes"
     },
     {
-      "source": "document:FINDINGS_SEVERITY.mmd",
-      "target": "concept:finding:XST (TRACE Method)",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:FINDINGS_SEVERITY.mmd",
+      "source": "document:email_spoof_poc.py",
       "target": "concept:finding:Email Spoofing",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:FINDINGS_SEVERITY.mmd",
-      "target": "concept:finding:Exchange Hostname Disclosure",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:FINDINGS_SEVERITY.mmd",
-      "target": "concept:finding:BeyondTrust SAML Leak",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:FINDINGS_SEVERITY.mmd",
-      "target": "concept:finding:Drupal Cache-Tags Leak",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:FINDINGS_SEVERITY.mmd",
-      "target": "concept:finding:Git Repository Existence",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DIAGRAMS.html",
-      "target": "concept:finding:XST (TRACE Method)",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DIAGRAMS.html",
-      "target": "concept:finding:Email Spoofing",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DIAGRAMS.html",
-      "target": "concept:finding:Exchange Hostname Disclosure",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DIAGRAMS.html",
-      "target": "concept:finding:BeyondTrust SAML Leak",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DIAGRAMS.html",
-      "target": "concept:finding:Drupal Cache-Tags Leak",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DIAGRAMS.html",
-      "target": "concept:finding:Git Repository Existence",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DASHBOARD.html",
-      "target": "concept:finding:XST (TRACE Method)",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DASHBOARD.html",
-      "target": "concept:finding:Email Spoofing",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DASHBOARD.html",
-      "target": "concept:finding:Exchange Hostname Disclosure",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DASHBOARD.html",
-      "target": "concept:finding:BeyondTrust SAML Leak",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DASHBOARD.html",
-      "target": "concept:finding:Drupal Cache-Tags Leak",
-      "type": "visualizes"
-    },
-    {
-      "source": "document:DASHBOARD.html",
-      "target": "concept:finding:Git Repository Existence",
-      "type": "visualizes"
+      "type": "exploits"
     },
     {
       "source": "document:xst_poc.html",
@@ -512,16 +691,6 @@
     {
       "source": "document:xst_poc.sh",
       "target": "concept:finding:XST (TRACE Method)",
-      "type": "exploits"
-    },
-    {
-      "source": "document:email_spoof_poc.py",
-      "target": "concept:finding:Email Spoofing",
-      "type": "exploits"
-    },
-    {
-      "source": "document:beyondtrust_poc.md",
-      "target": "concept:finding:BeyondTrust SAML Leak",
       "type": "exploits"
     }
   ],
@@ -557,11 +726,16 @@
       "name": "Reports",
       "description": "Written reports",
       "nodeIds": [
-        "document:FINAL_COMBINED.md",
-        "document:EXECUTIVE_SUMMARY.md",
         "document:ATTACK_MATRIX.md",
+        "document:COMBINED_REPORT.md",
+        "document:EXECUTIVE_SUMMARY.md",
+        "document:EXPLOIT_REPORT.md",
+        "document:FINAL_COMBINED.md",
+        "document:FINAL_REPORT.md",
+        "document:KNOWLEDGE_GRAPH.md",
         "document:REMEDIATION_CHECKLIST.md",
-        "document:KNOWLEDGE_GRAPH.md"
+        "document:REPORT.md",
+        "document:TEST_DIAGRAM.md"
       ]
     },
     {
@@ -570,10 +744,10 @@
       "description": "Visual assets",
       "nodeIds": [
         "document:ATTACK_CHAIN.mmd",
-        "document:INFRASTRUCTURE.mmd",
-        "document:FINDINGS_SEVERITY.mmd",
+        "document:DASHBOARD.html",
         "document:DIAGRAMS.html",
-        "document:DASHBOARD.html"
+        "document:FINDINGS_SEVERITY.mmd",
+        "document:INFRASTRUCTURE.mmd"
       ]
     },
     {
@@ -581,10 +755,9 @@
       "name": "PoCs",
       "description": "Proof-of-concept exploits",
       "nodeIds": [
-        "document:xst_poc.html",
-        "document:xst_poc.sh",
         "document:email_spoof_poc.py",
-        "document:beyondtrust_poc.md"
+        "document:xst_poc.html",
+        "document:xst_poc.sh"
       ]
     }
   ],
