@@ -17,18 +17,17 @@ graph TD
     concept_finding_BeyondTrust_SAML_Leak["BeyondTrust SAML Leak"]
     concept_finding_Drupal_CacheTags_Leak["Drupal Cache-Tags Leak"]
     concept_finding_Git_Repository_Existence["Git Repository Existence"]
+    document_FINAL_COMBINED_md["FINAL_COMBINED.md"]
     document_ATTACK_MATRIX_md["ATTACK_MATRIX.md"]
     document_COMBINED_REPORT_md["COMBINED_REPORT.md"]
     document_EXECUTIVE_SUMMARY_md["EXECUTIVE_SUMMARY.md"]
     document_EXPLOIT_REPORT_md["EXPLOIT_REPORT.md"]
-    document_FINAL_COMBINED_md["FINAL_COMBINED.md"]
     document_FINAL_REPORT_md["FINAL_REPORT.md"]
     document_KNOWLEDGE_GRAPH_md["KNOWLEDGE_GRAPH.md"]
     document_REMEDIATION_CHECKLIST_md["REMEDIATION_CHECKLIST.md"]
     document_REPORT_md["REPORT.md"]
     document_TEST_DIAGRAM_md["TEST_DIAGRAM.md"]
     document_ATTACK_CHAIN_mmd["ATTACK_CHAIN.mmd"]
-    document_DASHBOARD_html["DASHBOARD.html"]
     document_DIAGRAMS_html["DIAGRAMS.html"]
     document_FINDINGS_SEVERITY_mmd["FINDINGS_SEVERITY.mmd"]
     document_INFRASTRUCTURE_mmd["INFRASTRUCTURE.mmd"]
@@ -41,6 +40,12 @@ graph TD
     concept_target_remote_ou_edu -->|exposes| concept_finding_BeyondTrust_SAML_Leak
     concept_target_libraries_ou_edu -->|exposes| concept_finding_Drupal_CacheTags_Leak
     concept_target_libraries_ou_edu -->|exposes| concept_finding_Git_Repository_Existence
+    document_FINAL_COMBINED_md -->|documents| concept_finding_XST_TRACE_Method
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Email_Spoofing
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_FINAL_COMBINED_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Drupal_CacheTags_Leak
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Git_Repository_Existence
     document_ATTACK_MATRIX_md -->|documents| concept_finding_XST_TRACE_Method
     document_ATTACK_MATRIX_md -->|documents| concept_finding_Email_Spoofing
     document_ATTACK_MATRIX_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
@@ -65,12 +70,6 @@ graph TD
     document_EXPLOIT_REPORT_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
     document_EXPLOIT_REPORT_md -->|documents| concept_finding_Drupal_CacheTags_Leak
     document_EXPLOIT_REPORT_md -->|documents| concept_finding_Git_Repository_Existence
-    document_FINAL_COMBINED_md -->|documents| concept_finding_XST_TRACE_Method
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Email_Spoofing
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
-    document_FINAL_COMBINED_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Drupal_CacheTags_Leak
-    document_FINAL_COMBINED_md -->|documents| concept_finding_Git_Repository_Existence
     document_FINAL_REPORT_md -->|documents| concept_finding_XST_TRACE_Method
     document_FINAL_REPORT_md -->|documents| concept_finding_Email_Spoofing
     document_FINAL_REPORT_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
@@ -107,12 +106,6 @@ graph TD
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Drupal_CacheTags_Leak
     document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Git_Repository_Existence
-    document_DASHBOARD_html -->|visualizes| concept_finding_XST_TRACE_Method
-    document_DASHBOARD_html -->|visualizes| concept_finding_Email_Spoofing
-    document_DASHBOARD_html -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
-    document_DASHBOARD_html -->|visualizes| concept_finding_BeyondTrust_SAML_Leak
-    document_DASHBOARD_html -->|visualizes| concept_finding_Drupal_CacheTags_Leak
-    document_DASHBOARD_html -->|visualizes| concept_finding_Git_Repository_Existence
     document_DIAGRAMS_html -->|visualizes| concept_finding_XST_TRACE_Method
     document_DIAGRAMS_html -->|visualizes| concept_finding_Email_Spoofing
     document_DIAGRAMS_html -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
@@ -134,18 +127,17 @@ graph TD
     document_email_spoof_poc_py -->|exploits| concept_finding_Email_Spoofing
     document_xst_poc_html -->|exploits| concept_finding_XST_TRACE_Method
     document_xst_poc_sh -->|exploits| concept_finding_XST_TRACE_Method
+    style document_FINAL_COMBINED_md fill:#888888,color:#fff
     style document_ATTACK_MATRIX_md fill:#888888,color:#fff
     style document_COMBINED_REPORT_md fill:#888888,color:#fff
     style document_EXECUTIVE_SUMMARY_md fill:#888888,color:#fff
     style document_EXPLOIT_REPORT_md fill:#888888,color:#fff
-    style document_FINAL_COMBINED_md fill:#888888,color:#fff
     style document_FINAL_REPORT_md fill:#888888,color:#fff
     style document_KNOWLEDGE_GRAPH_md fill:#888888,color:#fff
     style document_REMEDIATION_CHECKLIST_md fill:#888888,color:#fff
     style document_REPORT_md fill:#888888,color:#fff
     style document_TEST_DIAGRAM_md fill:#888888,color:#fff
     style document_ATTACK_CHAIN_mmd fill:#888888,color:#fff
-    style document_DASHBOARD_html fill:#888888,color:#fff
     style document_DIAGRAMS_html fill:#888888,color:#fff
     style document_FINDINGS_SEVERITY_mmd fill:#888888,color:#fff
     style document_INFRASTRUCTURE_mmd fill:#888888,color:#fff

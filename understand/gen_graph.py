@@ -43,11 +43,16 @@ POC_DESC = {
 
 def discover(exts, desc_map):
     out = {}
-    for fn in sorted(os.listdir(ROOT)):
-        if fn in ("README.md",) or fn.startswith("."):
+    scan_dirs = [ROOT, os.path.join(ROOT, "reports"), os.path.join(ROOT, "pocs"),
+                 os.path.join(ROOT, "diagrams")]
+    for d in scan_dirs:
+        if not os.path.isdir(d):
             continue
-        if fn.endswith(exts):
-            out[fn] = desc_map.get(fn, fn.replace("_", " ").replace(".md", ""))
+        for fn in sorted(os.listdir(d)):
+            if fn in ("README.md",) or fn.startswith("."):
+                continue
+            if fn.endswith(exts):
+                out[fn] = desc_map.get(fn, fn.replace("_", " ").replace(".md", ""))
     return out
 
 REPORTS = {f: ("report", "Reporting", d) for f, d in discover((".md",), REPORT_DESC).items()

@@ -85,9 +85,48 @@ graph TD
     style B2 fill:#ffaa00
 ```
 
+## Repository Structure
+
+```
+ou-hunt-report/
+├── README.md                    # This file
+├── FINAL_COMBINED.md            # Master findings report (entry point)
+├── reports/                     # Written reports
+│   ├── EXECUTIVE_SUMMARY.md
+│   ├── ATTACK_MATRIX.md
+│   ├── REMEDIATION_CHECKLIST.md
+│   ├── KNOWLEDGE_GRAPH.md
+│   ├── COMBINED_REPORT.md
+│   ├── EXPLOIT_REPORT.md
+│   ├── FINAL_REPORT.md
+│   ├── REPORT.md
+│   └── TEST_DIAGRAM.md
+├── pocs/                        # Proof-of-concept exploits
+│   ├── xst_poc.html
+│   ├── xst_poc.sh
+│   ├── email_spoof_poc.py
+│   └── beyondtrust_poc.md
+├── diagrams/                    # Mermaid source + interactive viewer
+│   ├── ATTACK_CHAIN.mmd
+│   ├── INFRASTRUCTURE.mmd
+│   ├── FINDINGS_SEVERITY.mmd
+│   └── DIAGRAMS.html
+├── dashboard/                   # Interactive visual dashboard
+│   └── DASHBOARD.html
+├── assets/                      # Portable SVG/PNG (render on app + web)
+│   ├── severity.svg / .png
+│   ├── attack-chain.svg / .png
+│   ├── knowledge-graph.svg / .png
+│   └── gen_assets.py
+└── understand/                  # Understand-Anything knowledge graph
+    ├── knowledge-graph.json
+    ├── GRAPH.md
+    └── gen_graph.py
+```
+
 ## Dashboard
 
-Open `DASHBOARD.html` for an interactive visual overview of all findings.
+Open [`dashboard/DASHBOARD.html`](dashboard/DASHBOARD.html) for an interactive visual overview of all findings.
 
 ## Knowledge Graph (Understand-Anything)
 
@@ -247,34 +286,34 @@ graph TD
 
 ## Diagrams
 
-Open `DIAGRAMS.html` to view interactive Mermaid diagrams in your browser.
+Open [`diagrams/DIAGRAMS.html`](diagrams/DIAGRAMS.html) to view interactive Mermaid diagrams in your browser.
 
 ### Mermaid Source Files
 
 | File | Description |
 |------|-------------|
-| `ATTACK_CHAIN.mmd` | Attack chain flow |
-| `INFRASTRUCTURE.mmd` | Infrastructure map |
-| `FINDINGS_SEVERITY.mmd` | Severity breakdown |
+| [`diagrams/ATTACK_CHAIN.mmd`](diagrams/ATTACK_CHAIN.mmd) | Attack chain flow |
+| [`diagrams/INFRASTRUCTURE.mmd`](diagrams/INFRASTRUCTURE.mmd) | Infrastructure map |
+| [`diagrams/FINDINGS_SEVERITY.mmd`](diagrams/FINDINGS_SEVERITY.mmd) | Severity breakdown |
 
 ## POCs
 
 | File | Description |
 |------|-------------|
-| `xst_poc.html` | Browser-based XST exploit |
-| `xst_poc.sh` | Bash exploit script |
-| `email_spoof_poc.py` | Email spoofing demonstration |
-| `beyondtrust_poc.md` | BeyondTrust findings |
+| [`pocs/xst_poc.html`](pocs/xst_poc.html) | Browser-based XST exploit |
+| [`pocs/xst_poc.sh`](pocs/xst_poc.sh) | Bash exploit script |
+| [`pocs/email_spoof_poc.py`](pocs/email_spoof_poc.py) | Email spoofing demonstration |
+| [`pocs/beyondtrust_poc.md`](pocs/beyondtrust_poc.md) | BeyondTrust findings |
 
 ## Reports
 
 | File | Description |
 |------|-------------|
-| `FINAL_COMBINED.md` | Complete findings report |
-| `EXECUTIVE_SUMMARY.md` | High-level summary |
-| `ATTACK_MATRIX.md` | Attack techniques and kill chain |
-| `REMEDIATION_CHECKLIST.md` | Actionable fix checklist |
-| `KNOWLEDGE_GRAPH.md` | Interactive knowledge graph |
+| [`FINAL_COMBINED.md`](FINAL_COMBINED.md) | Complete findings report |
+| [`reports/EXECUTIVE_SUMMARY.md`](reports/EXECUTIVE_SUMMARY.md) | High-level summary |
+| [`reports/ATTACK_MATRIX.md`](reports/ATTACK_MATRIX.md) | Attack techniques and kill chain |
+| [`reports/REMEDIATION_CHECKLIST.md`](reports/REMEDIATION_CHECKLIST.md) | Actionable fix checklist |
+| [`reports/KNOWLEDGE_GRAPH.md`](reports/KNOWLEDGE_GRAPH.md) | Interactive knowledge graph |
 
 ## Tools Used
 
