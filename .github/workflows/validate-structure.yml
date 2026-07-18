@@ -1,0 +1,103 @@
+name: validate-structure
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate required structure
+        run: |
+          set -e
+          echo "== Required files & folders =="
+          REQUIRED=(
+            "README.md"
+            "LICENSE"
+            "SECURITY.md"
+            "CONTRIBUTING.md"
+            "FINAL_COMBINED.md"
+            "reports"
+            "pocs"
+            "diagrams"
+            "dashboard"
+            "assets"
+            "understand"
+          )
+          for p in "${REQUIRED[@]}"; do
+            if [ ! -e "$p" ]; then
+              echo "MISSING: $p"; exit 1
+            fi
+            echo "ok: $p"
+          done
+
+          echo "== Required reports =="
+          for f in EXECUTIVE_SUMMARY.md ATTACK_MATRIX.md REMEDIATION_CHECKLIST.md KNOWLEDGE_GRAPH.md; do
+            [ -f "reports/$f" ] || { echo "MISSING report: $f"; exit 1; }
+            echo "ok: reports/$f"
+          done
+
+          echo "== Required PoCs =="
+          for f in xst_poc.html xst_poc.sh email_spoof_poc.py beyondtrust_poc.md; do
+            [ -f "pocs/$f" ] || { echo "MISSING poc: $f"; exit 1; }
+            echo "ok: pocs/$f"
+          done
+
+          echo "== Required assets (portable SVG/PNG) =="
+          for f in severity.svg severity.png attack-chain.svg attack-chain.png knowledge-graph.svg knowledge-graph.png; do
+            [ -f "assets/$f" ] || { echo "MISSING asset: $f"; exit 1; }
+            echo "ok: assets/$f"
+          done
+
+          echo "== Mermaid blocks present in README =="
+          MERMAID=$(grep -c '```mermaid' README.md)
+          echo "mermaid blocks: $MERMAID"
+          [ "$MERMAID" -ge 4 ] || { echo "Expected >=4 mermaid blocks"; exit 1; }
+
+      - name: Run generators (must succeed)
+        run: |
+          set -e
+          python3 assets/gen_assets.py
+          python3 understand/gen_assets.py 2>/dev/null || python3 understand/gen_graph.py
+
+      - name: Validate knowledge-graph JSON
+        run: |
+          set -e
+          python3 - <<'PY'
+          import json
+          g = json.load(open("understand/knowledge-graph.json"))
+          assert g["nodes"], "no nodes"
+          assert g["edges"], "no edges"
+          assert g["layers"], "no layers"
+          # every edge endpoint must reference a real node id
+          ids = {n["id"] for n in g["nodes"]}
+          for e in g["edges"]:
+              assert e["source"] in ids, f"dangling source {e['source']}"
+              assert e["target"] in ids, f"dangling target {e['target']}"
+          print(f"graph OK: {len(g['nodes'])} nodes, {len(g['edges'])} edges")
+          PY
+
+      - name: Validate SVG assets are well-formed XML
+        run: |
+          set -e
+          python3 - <<'PY'
+          import xml.dom.minidom, glob, sys
+          bad = []
+          for f in glob.glob("assets/*.svg"):
+              try:
+                  xml.dom.minidom.parse(f)
+              except Exception as e:
+                  bad.append(f"{f}: {e}")
+          if bad:
+              print("INVALID SVG:"); print("\n".join(bad)); sys.exit(1)
+          print("all SVG assets well-formed")
+          PY
