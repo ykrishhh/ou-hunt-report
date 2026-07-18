@@ -71,6 +71,104 @@ graph TD
 
 Open `DASHBOARD.html` for an interactive visual overview of all findings.
 
+## Knowledge Graph (Understand-Anything)
+
+A structural knowledge graph of this repo, generated with Understand-Anything's schema (`understand/knowledge-graph.json`). Full graph in [`understand/GRAPH.md`](understand/GRAPH.md).
+
+```mermaid
+graph TD
+    concept_target_www_ou_edu["www.ou.edu"]
+    concept_target_exchange_ou_edu["exchange.ou.edu"]
+    concept_target_remote_ou_edu["remote.ou.edu"]
+    concept_target_libraries_ou_edu["libraries.ou.edu"]
+    concept_target_sso_ou_edu["sso.ou.edu"]
+    concept_target_coe_ou_edu["coe.ou.edu"]
+    concept_finding_XST_TRACE_Method["XST (TRACE Method)"]
+    concept_finding_Email_Spoofing["Email Spoofing"]
+    concept_finding_Exchange_Hostname_Disclosure["Exchange Hostname Disclosure"]
+    concept_finding_BeyondTrust_SAML_Leak["BeyondTrust SAML Leak"]
+    concept_finding_Drupal_Cache-Tags_Leak["Drupal Cache-Tags Leak"]
+    concept_finding_Git_Repository_Existence["Git Repository Existence"]
+    document_FINAL_COMBINED_md["FINAL_COMBINED.md"]
+    document_EXECUTIVE_SUMMARY_md["EXECUTIVE_SUMMARY.md"]
+    document_ATTACK_MATRIX_md["ATTACK_MATRIX.md"]
+    document_REMEDIATION_CHECKLIST_md["REMEDIATION_CHECKLIST.md"]
+    document_KNOWLEDGE_GRAPH_md["KNOWLEDGE_GRAPH.md"]
+    document_ATTACK_CHAIN_mmd["ATTACK_CHAIN.mmd"]
+    document_INFRASTRUCTURE_mmd["INFRASTRUCTURE.mmd"]
+    document_FINDINGS_SEVERITY_mmd["FINDINGS_SEVERITY.mmd"]
+    document_DIAGRAMS_html["DIAGRAMS.html"]
+    document_DASHBOARD_html["DASHBOARD.html"]
+    document_xst_poc_html["xst_poc.html"]
+    document_xst_poc_sh["xst_poc.sh"]
+    document_email_spoof_poc_py["email_spoof_poc.py"]
+    document_beyondtrust_poc_md["beyondtrust_poc.md"]
+
+    concept_target_www_ou_edu -->|exposes| concept_finding_XST_TRACE_Method
+    concept_target_ou_edu -->|exposes| concept_finding_Email_Spoofing
+    concept_target_exchange_ou_edu -->|exposes| concept_finding_Exchange_Hostname_Disclosure
+    concept_target_remote_ou_edu -->|exposes| concept_finding_BeyondTrust_SAML_Leak
+    concept_target_libraries_ou_edu -->|exposes| concept_finding_Drupal_Cache-Tags_Leak
+    concept_target_libraries_ou_edu -->|exposes| concept_finding_Git_Repository_Existence
+
+    document_FINAL_COMBINED_md -->|documents| concept_finding_XST_TRACE_Method
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Email_Spoofing
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_FINAL_COMBINED_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Drupal_Cache-Tags_Leak
+    document_FINAL_COMBINED_md -->|documents| concept_finding_Git_Repository_Existence
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_XST_TRACE_Method
+    document_EXECUTIVE_SUMMARY_md -->|documents| concept_finding_Email_Spoofing
+    document_ATTACK_MATRIX_md -->|documents| concept_finding_XST_TRACE_Method
+    document_ATTACK_MATRIX_md -->|documents| concept_finding_Email_Spoofing
+    document_ATTACK_MATRIX_md -->|documents| concept_finding_Exchange_Hostname_Disclosure
+    document_ATTACK_MATRIX_md -->|documents| concept_finding_BeyondTrust_SAML_Leak
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_XST_TRACE_Method
+    document_REMEDIATION_CHECKLIST_md -->|documents| concept_finding_Email_Spoofing
+    document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_XST_TRACE_Method
+    document_KNOWLEDGE_GRAPH_md -->|documents| concept_finding_Email_Spoofing
+
+    document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_XST_TRACE_Method
+    document_ATTACK_CHAIN_mmd -->|visualizes| concept_finding_Email_Spoofing
+    document_INFRASTRUCTURE_mmd -->|visualizes| concept_finding_Exchange_Hostname_Disclosure
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_XST_TRACE_Method
+    document_FINDINGS_SEVERITY_mmd -->|visualizes| concept_finding_Email_Spoofing
+    document_DIAGRAMS_html -->|visualizes| concept_finding_XST_TRACE_Method
+    document_DASHBOARD_html -->|visualizes| concept_finding_Email_Spoofing
+
+    document_xst_poc_html -->|exploits| concept_finding_XST_TRACE_Method
+    document_xst_poc_sh -->|exploits| concept_finding_XST_TRACE_Method
+    document_email_spoof_poc_py -->|exploits| concept_finding_Email_Spoofing
+    document_beyondtrust_poc_md -->|exploits| concept_finding_BeyondTrust_SAML_Leak
+
+    style concept_target_www_ou_edu fill:#4488ff,color:#fff
+    style concept_target_exchange_ou_edu fill:#4488ff,color:#fff
+    style concept_target_remote_ou_edu fill:#4488ff,color:#fff
+    style concept_target_libraries_ou_edu fill:#4488ff,color:#fff
+    style concept_target_sso_ou_edu fill:#4488ff,color:#fff
+    style concept_target_coe_ou_edu fill:#4488ff,color:#fff
+    style concept_finding_XST_TRACE_Method fill:#ff4444,color:#fff
+    style concept_finding_Email_Spoofing fill:#ff4444,color:#fff
+    style concept_finding_Exchange_Hostname_Disclosure fill:#ffaa00,color:#fff
+    style concept_finding_BeyondTrust_SAML_Leak fill:#ffaa00,color:#fff
+    style concept_finding_Drupal_Cache-Tags_Leak fill:#44ff44,color:#fff
+    style concept_finding_Git_Repository_Existence fill:#4444ff,color:#fff
+    style document_FINAL_COMBINED_md fill:#888888,color:#fff
+    style document_EXECUTIVE_SUMMARY_md fill:#888888,color:#fff
+    style document_ATTACK_MATRIX_md fill:#888888,color:#fff
+    style document_REMEDIATION_CHECKLIST_md fill:#888888,color:#fff
+    style document_KNOWLEDGE_GRAPH_md fill:#888888,color:#fff
+    style document_ATTACK_CHAIN_mmd fill:#888888,color:#fff
+    style document_INFRASTRUCTURE_mmd fill:#888888,color:#fff
+    style document_FINDINGS_SEVERITY_mmd fill:#888888,color:#fff
+    style document_DIAGRAMS_html fill:#888888,color:#fff
+    style document_DASHBOARD_html fill:#888888,color:#fff
+    style document_xst_poc_html fill:#888888,color:#fff
+    style document_xst_poc_sh fill:#888888,color:#fff
+    style document_email_spoof_poc_py fill:#888888,color:#fff
+    style document_beyondtrust_poc_md fill:#888888,color:#fff
+```
+
 ## Diagrams
 
 Open `DIAGRAMS.html` to view interactive Mermaid diagrams in your browser.
