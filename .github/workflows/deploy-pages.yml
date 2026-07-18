@@ -1,0 +1,54 @@
+name: deploy-pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare site
+        run: |
+          set -e
+          mkdir -p _site
+          # Dashboard as the site root
+          cp dashboard/DASHBOARD.html _site/index.html
+          # Assets folder (SVG/PNG diagrams) at root so README image links resolve
+          cp -r assets _site/assets
+          # Diagrams viewer
+          cp -r diagrams _site/diagrams
+          # Top-level reports for linking
+          cp FINAL_COMBINED.md _site/FINAL_COMBINED.md
+          cp -r reports _site/reports
+          cp -r pocs _site/pocs
+          cp -r understand _site/understand
+          echo "site contents:" && ls -la _site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
