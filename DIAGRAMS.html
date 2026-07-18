@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OU Hunt Diagrams</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a1a; color: #fff; }
+        h1 { color: #44aaff; }
+        .diagram { background: #2a2a2a; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        h2 { color: #ffaa00; }
+    </style>
+</head>
+<body>
+    <h1>OU.edu Hunt Diagrams</h1>
+    
+    <div class="diagram">
+        <h2>Attack Chain</h2>
+        <pre class="mermaid">
+graph TD
+    A[Attacker] -->|1. Recon| B[Exchange Hostname Disclosure]
+    A -->|2. Recon| C[BeyondTrust SAML Leak]
+    A -->|3. Recon| D[Drupal Cache-Tags Leak]
+    B --> E[Identify DC: OUEXCHNTDC01]
+    C --> F[Map SAML Federation]
+    D --> G[Enumerate Internal IDs]
+    E --> H{Exploit Phase}
+    F --> H
+    G --> H
+    H -->|XST| I[Session Hijacking]
+    H -->|Email Spoof| J[Phishing Attack]
+    I --> K[Account Takeover]
+    J --> L[Credential Theft]
+    K --> M[AD Compromise]
+    L --> M
+    M --> N[Forest Compromise]
+        </pre>
+    </div>
+    
+    <div class="diagram">
+        <h2>Infrastructure</h2>
+        <pre class="mermaid">
+graph LR
+    subgraph "OU Infrastructure"
+        A[coe.ou.edu<br/>Apache/2.4.37]
+        B[www.ou.edu<br/>Apache/2.4.6]
+        C[exchange.ou.edu<br/>Exchange 2019 CU14]
+        D[libraries.ou.edu<br/>Drupal 11]
+        E[remote.ou.edu<br/>BeyondTrust]
+        F[sso.ou.edu<br/>ADFS]
+    end
+    
+    A -->|shares IP| B
+    C -->|ADFS SSO| F
+    E -->|SAML| F
+    D -->|Drupal| G[Pantent CDN]
+    B -->|BIG-IP| H[F5 Load Balancer]
+    C -->|BIG-IP| H
+        </pre>
+    </div>
+    
+    <div class="diagram">
+        <h2>Findings Severity</h2>
+        <pre class="mermaid">
+graph TD
+    subgraph "HIGH"
+        A1[XST - TRACE Method<br/>www.ou.edu]
+        A2[Email Spoofing<br/>ou.edu]
+    end
+    
+    subgraph "MEDIUM"
+        B1[Exchange Hostname<br/>exchange.ou.edu]
+        B2[BeyondTrust SAML<br/>remote.ou.edu]
+    end
+    
+    subgraph "LOW"
+        C1[Drupal Cache-Tags<br/>libraries.ou.edu]
+    end
+    
+    subgraph "INFO"
+        D1[Git Repo Exists<br/>libraries.ou.edu]
+    end
+    
+    A1 -->|Session Hijacking| E[Impact]
+    A2 -->|Phishing| E
+    B1 -->|Infra Mapping| E
+    B2 -->|Social Engineering| E
+    E --> F[Account Takeover]
+    E --> G[Data Theft]
+    E --> H[AD Compromise]
+        </pre>
+    </div>
+    
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+</body>
+</html>

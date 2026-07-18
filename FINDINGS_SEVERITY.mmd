@@ -1,0 +1,26 @@
+graph TD
+    subgraph "HIGH"
+        A1[XST - TRACE Method<br/>www.ou.edu]
+        A2[Email Spoofing<br/>ou.edu]
+    end
+    
+    subgraph "MEDIUM"
+        B1[Exchange Hostname<br/>exchange.ou.edu]
+        B2[BeyondTrust SAML<br/>remote.ou.edu]
+    end
+    
+    subgraph "LOW"
+        C1[Drupal Cache-Tags<br/>libraries.ou.edu]
+    end
+    
+    subgraph "INFO"
+        D1[Git Repo Exists<br/>libraries.ou.edu]
+    end
+    
+    A1 -->|Session Hijacking| E[Impact]
+    A2 -->|Phishing| E
+    B1 -->|Infra Mapping| E
+    B2 -->|Social Engineering| E
+    E --> F[Account Takeover]
+    E --> G[Data Theft]
+    E --> H[AD Compromise]

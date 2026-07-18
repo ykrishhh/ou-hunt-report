@@ -1,0 +1,16 @@
+graph LR
+    subgraph "OU Infrastructure"
+        A[coe.ou.edu<br/>Apache/2.4.37]
+        B[www.ou.edu<br/>Apache/2.4.6]
+        C[exchange.ou.edu<br/>Exchange 2019 CU14]
+        D[libraries.ou.edu<br/>Drupal 11]
+        E[remote.ou.edu<br/>BeyondTrust]
+        F[sso.ou.edu<br/>ADFS]
+    end
+    
+    A -->|shares IP| B
+    C -->|ADFS SSO| F
+    E -->|SAML| F
+    D -->|Drupal| G[Pantent CDN]
+    B -->|BIG-IP| H[F5 Load Balancer]
+    C -->|BIG-IP| H

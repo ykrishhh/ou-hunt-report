@@ -1,0 +1,17 @@
+graph TD
+    A[Attacker] -->|1. Recon| B[Exchange Hostname Disclosure]
+    A -->|2. Recon| C[BeyondTrust SAML Leak]
+    A -->|3. Recon| D[Drupal Cache-Tags Leak]
+    B --> E[Identify DC: OUEXCHNTDC01]
+    C --> F[Map SAML Federation]
+    D --> G[Enumerate Internal IDs]
+    E --> H{Exploit Phase}
+    F --> H
+    G --> H
+    H -->|XST| I[Session Hijacking]
+    H -->|Email Spoof| J[Phishing Attack]
+    I --> K[Account Takeover]
+    J --> L[Credential Theft]
+    K --> M[AD Compromise]
+    L --> M
+    M --> N[Forest Compromise]
