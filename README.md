@@ -344,3 +344,8 @@ Open [`diagrams/DIAGRAMS.html`](diagrams/DIAGRAMS.html) to view interactive Merm
 Licensed under the [MIT License](LICENSE). See [SECURITY.md](SECURITY.md) for the
 responsible-disclosure policy and [CONTRIBUTING.md](CONTRIBUTING.md) for how to
 extend this repository.
+
+
+## Architecture
+
+Explore interactive diagrams of this project's architecture: [docs/architecture.html](docs/architecture.html).
